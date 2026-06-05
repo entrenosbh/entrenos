@@ -1307,17 +1307,23 @@ margin-bottom:8px;
 
 }
 
-.instagram-link{
+.instagram-link,
+.instagram-link:visited,
+.instagram-link:active{
 
-color:#ffffff;
+color:#ffffff !important;
 
-text-decoration:none;
+text-decoration:none !important;
 
 }
 
 .instagram-link:hover{
 
+color:#ffffff !important;
+
 opacity:.8;
+
+text-decoration:none !important;
 
 }
 
