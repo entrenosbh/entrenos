@@ -995,7 +995,7 @@ color:#111;
 
 .encontro-eyebrow{
 
-color:var(--roxo);
+color:var(--rosa);
 
 }
 
@@ -1034,9 +1034,9 @@ padding:50px;
 
 border-radius:35px;
 
-background:#fafafa;
+background:#4CC9F0;
 
-border:2px solid rgba(0,0,0,.05);
+border:none;
 
 transition:.3s;
 
@@ -1044,7 +1044,7 @@ transition:.3s;
 
 .encontro-grid div:hover{
 
-transform:translateY(-8px);
+transform:translateY(-10px) scale(1.02);
 
 }
 
