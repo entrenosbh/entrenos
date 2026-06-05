@@ -1020,9 +1020,9 @@ color:var(--roxo);
 
 display:grid;
 
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(2,1fr);
 
-gap:25px;
+gap:40px;
 
 margin-bottom:50px;
 
@@ -1030,7 +1030,7 @@ margin-bottom:50px;
 
 .encontro-grid div{
 
-padding:40px;
+padding:50px;
 
 border-radius:35px;
 
@@ -1066,9 +1066,19 @@ color:var(--rosa);
 
 .encontro-grid strong{
 
-font-size:1.15rem;
+display:block;
 
-line-height:1.4;
+font-family:'Bricolage Grotesque',sans-serif;
+
+font-size:clamp(2.2rem,4vw,3.5rem);
+
+line-height:.95;
+
+letter-spacing:-.03em;
+
+margin-top:8px;
+
+color:var(--roxo);
 
 }
 
