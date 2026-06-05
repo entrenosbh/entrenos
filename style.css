@@ -1307,6 +1307,20 @@ margin-bottom:8px;
 
 }
 
+.instagram-link{
+
+color:#ffffff;
+
+text-decoration:none;
+
+}
+
+.instagram-link:hover{
+
+opacity:.8;
+
+}
+
 /* ==========================
 RESPONSIVO
 ========================== */
