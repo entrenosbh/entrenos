@@ -304,7 +304,7 @@ INDICADORES
 
 .indicadores{
 
-padding:120px 0;
+padding:140px 0;
 
 background:var(--roxo);
 
@@ -318,25 +318,21 @@ overflow:hidden;
 
 display:grid;
 
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(6,1fr);
 
-gap:24px;
+gap:22px;
 
 }
+
+/* Cards */
 
 .indicador{
 
 position:relative;
 
-min-height:260px;
+padding:45px;
 
-padding:40px;
-
-border:1px solid rgba(255,255,255,.25);
-
-border-radius:24px;
-
-background:transparent;
+min-height:240px;
 
 display:flex;
 
@@ -344,9 +340,51 @@ flex-direction:column;
 
 justify-content:space-between;
 
-transition:.35s cubic-bezier(.22,.61,.36,1);
+border:1px solid rgba(255,255,255,.18);
+
+background:transparent;
+
+transition:.35s;
 
 overflow:hidden;
+
+}
+
+/* Linhas decorativas */
+
+.indicador::before{
+
+content:"";
+
+position:absolute;
+
+top:24px;
+
+left:24px;
+
+width:55px;
+
+height:2px;
+
+background:rgba(255,255,255,.5);
+
+}
+
+.indicador::after{
+
+content:"";
+
+position:absolute;
+
+top:24px;
+
+left:24px;
+
+width:2px;
+
+height:55px;
+
+background:rgba(255,255,255,.5);
 
 }
 
@@ -354,21 +392,35 @@ overflow:hidden;
 
 transform:translateY(-8px);
 
+background:rgba(255,255,255,.04);
+
 border-color:#fff;
 
-background:rgba(255,255,255,.03);
+}
+
+/* Primeira linha */
+
+.destaque{
+
+grid-column:span 2;
 
 }
 
-/* remove as bolinhas antigas */
+.indicador:not(.destaque):not(.metade){
 
-.indicador::before{
-
-display:none;
+grid-column:span 2;
 
 }
 
-/* números */
+/* Segunda linha */
+
+.metade{
+
+grid-column:span 3;
+
+}
+
+/* Número */
 
 .indicador strong{
 
@@ -376,99 +428,45 @@ display:block;
 
 font-family:'Bricolage Grotesque',sans-serif;
 
-font-size:clamp(5rem,8vw,8rem);
+font-size:clamp(5rem,9vw,8rem);
 
 line-height:.8;
 
-letter-spacing:-.06em;
+letter-spacing:-.07em;
 
 color:#fff;
 
-margin-bottom:20px;
-
 }
 
-/* texto */
+/* Texto */
 
 .indicador span{
 
-display:block;
-
-font-size:.95rem;
+font-size:1rem;
 
 font-weight:700;
 
 line-height:1.35;
 
-letter-spacing:.08em;
+letter-spacing:.12em;
 
 text-transform:uppercase;
 
 color:#fff;
 
-max-width:220px;
+}
+
+/* Destaque do último card */
+
+.metade:last-child{
+
+background:rgba(255,255,255,.05);
 
 }
 
-/* primeiro card */
-
-.destaque{
-
-border-color:rgba(255,255,255,.45);
-
-}
-
-/* card 100% */
-
-.indicador-full{
-
-grid-column:1 / -1;
-
-min-height:180px;
-
-align-items:center;
-
-justify-content:center;
-
-text-align:center;
-
-}
-
-.indicador-full strong{
-
-font-size:clamp(7rem,12vw,10rem);
-
-margin-bottom:10px;
-
-}
-
-.indicador-full span{
-
-max-width:none;
-
-letter-spacing:.20em;
-
-}
-
-/* responsivo */
+/* Responsivo */
 
 @media(max-width:1000px){
-
-.indicadores-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.indicador-full{
-
-grid-column:1 / -1;
-
-}
-
-}
-
-@media(max-width:700px){
 
 .indicadores-grid{
 
@@ -476,9 +474,13 @@ grid-template-columns:1fr;
 
 }
 
+.destaque,
+
+.metade,
+
 .indicador{
 
-min-height:200px;
+grid-column:auto;
 
 }
 
