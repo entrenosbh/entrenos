@@ -858,369 +858,427 @@ background:var(--roxo);
 }
 
 /* ===================================================
-COMO FUNCIONA
+COMO FUNCIONA — LARGURA TOTAL
 =================================================== */
 
-.funciona{
-
-padding:220px 0;
-
-background:#fff;
-
+.funciona {
+    position: relative;
+    padding: 220px 0;
+    background: #fff;
+    overflow: hidden;
 }
 
-.funciona .eyebrow{
-
-color:var(--rosa);
-
+/* CONTAINER EM LARGURA TOTAL */
+.funciona .container {
+    position: relative;
+    z-index: 2;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 60px;
+    margin: 0 auto;
 }
 
-.funciona h2{
-
-font-family:'Bricolage Grotesque',sans-serif;
-
-font-size:clamp(4rem,8vw,7rem);
-
-line-height:.9;
-
-letter-spacing:-.04em;
-
-margin-top:15px;
-
-margin-bottom:40px;
-
-color:var(--roxo);
-
-max-width:900px;
-
+.funciona .eyebrow {
+    color: var(--rosa);
+    margin-bottom: 18px;
 }
 
-.funciona-intro{
+/* ==========================================
+CABEÇALHO COM IMAGEM LATERAL — GRANDE
+========================================== */
 
-font-size:1.35rem;
-
-line-height:1.8;
-
-max-width:900px;
-
-margin-bottom:120px;
-
-color:#444;
-
+.funciona-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 50px;
+    width: 100%;
 }
 
-/* ============================================= */
-
-.etapa{
-
-display:grid;
-
-grid-template-columns:170px 1fr;
-
-gap:60px;
-
-padding:70px 0;
-
-border-top:1px solid rgba(0,0,0,.08);
-
-align-items:flex-start;
-
+.funciona-header-left {
+    flex: 1;
+    min-width: 0;
 }
 
-.etapa:last-child{
-
-border-bottom:1px solid rgba(0,0,0,.08);
-
+.funciona-header-left h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(4rem, 8vw, 7rem);
+    line-height: .88;
+    letter-spacing: -.05em;
+    color: var(--roxo);
 }
 
-.etapa-numero{
-
-font-family:'Bricolage Grotesque',sans-serif;
-
-font-size:7rem;
-
-font-weight:800;
-
-line-height:.8;
-
-color:#ececec;
-
-position:sticky;
-
-top:130px;
-
-user-select:none;
-
+/* IMAGEM JORNADA — QUASE METADE DA TELA */
+.funciona-header-imagem {
+    flex-shrink: 0;
+    width: 45%;
+    max-width: 600px;
 }
 
-.etapa-conteudo{
-
-max-width:900px;
-
+.funciona-header-imagem img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
 }
 
-.etapa-tag{
-
-display:inline-block;
-
-padding:10px 18px;
-
-border-radius:999px;
-
-font-size:.78rem;
-
-font-weight:800;
-
-letter-spacing:.15em;
-
-margin-bottom:22px;
-
-background:#F72585;
-
-color:#fff;
-
+.funciona-intro {
+    font-size: 1.35rem;
+    line-height: 1.9;
+    max-width: 100%;
+    margin-bottom: 100px;
+    color: #555;
+    text-align: justify;
+    padding-right: 40px;
 }
 
-.etapa:nth-child(3) .etapa-tag{
+/* ==========================================
+ETAPAS — BLOCO OCUPA 100% DA LARGURA
+========================================== */
 
-background:#4CC9F0;
-
-color:#111;
-
+.etapa {
+    position: relative;
+    display: block;
+    padding: 80px 70px;
+    margin-bottom: 40px;
+    border-radius: 40px;
+    overflow: visible;
+    transition: .3s;
+    min-height: 400px;
+    border: none;
+    width: 100%;
 }
 
-.etapa:nth-child(4) .etapa-tag{
-
-background:#3A0CA3;
-
-color:#fff;
-
+.etapa:last-child {
+    margin-bottom: 0;
 }
 
-.etapa h3{
-
-font-family:'Bricolage Grotesque',sans-serif;
-
-font-size:clamp(2.8rem,5vw,4rem);
-
-line-height:.95;
-
-letter-spacing:-.03em;
-
-margin-bottom:30px;
-
-color:#111;
-
+/* FUNDOS COLORIDOS */
+.etapa:nth-of-type(2) {
+    background: #F72585;
 }
 
-.etapa p{
-
-font-size:1.15rem;
-
-line-height:1.9;
-
-color:#555;
-
-margin-bottom:25px;
-
+.etapa:nth-of-type(3) {
+    background: #4CC9F0;
 }
 
-.etapa strong{
-
-color:var(--roxo);
-
+.etapa:nth-of-type(4) {
+    background: #3A0CA3;
 }
 
-/* ============================================= */
+/* ==========================================
+NÚMEROS GIGANTES
+========================================== */
 
-.etapa ul{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:18px;
-
-margin-top:40px;
-
-padding:0;
-
-list-style:none;
-
+.etapa-numero {
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 30rem;
+    font-weight: 900;
+    line-height: .7;
+    letter-spacing: -.10em;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    white-space: nowrap;
 }
 
-.etapa li{
-
-padding:18px 24px;
-
-border:1px solid rgba(58,12,163,.15);
-
-border-radius:18px;
-
-font-weight:600;
-
-transition:.35s;
-
-background:#fff;
-
+.etapa:nth-of-type(2) .etapa-numero {
+    color: rgba(255, 255, 255, 0.12);
 }
 
-.etapa li:hover{
-
-transform:translateY(-6px);
-
-border-color:var(--rosa);
-
-background:#faf7ff;
-
+.etapa:nth-of-type(3) .etapa-numero {
+    color: rgba(255, 255, 255, 0.18);
 }
 
-/* ============================================= */
-
-.temas-titulo{
-
-font-family:'Bricolage Grotesque',sans-serif;
-
-font-size:2rem;
-
-margin-top:50px;
-
-margin-bottom:35px;
-
-color:var(--roxo);
-
+.etapa:nth-of-type(4) .etapa-numero {
+    color: rgba(255, 255, 255, 0.10);
 }
 
-.temas-grid{
+/* ==========================================
+CONTEÚDO — TEXTO OCUPA TODO O ESPAÇO
+========================================== */
 
-display:flex;
-
-flex-wrap:wrap;
-
-gap:16px;
-
-margin-top:10px;
-
+.etapa-conteudo {
+    position: relative;
+    z-index: 2;
+    max-width: none;
+    width: 100%;
+    padding-left: 170px;
 }
 
-.tema{
-
-padding:16px 24px;
-
-border-radius:999px;
-
-border:2px solid rgba(58,12,163,.12);
-
-background:#fff;
-
-font-weight:700;
-
-transition:.35s;
-
-cursor:default;
-
+.etapa-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 26px;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .15em;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
 }
 
-.tema:nth-child(3n+1){
-
-border-color:#F72585;
-
+.etapa h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: .95;
+    letter-spacing: -.04em;
+    margin-bottom: 30px;
+    color: #fff;
+    max-width: 100%;
 }
 
-.tema:nth-child(3n+2){
-
-border-color:#4CC9F0;
-
+/* TEXTO OCUPA 100% DA LARGURA DO BLOCO */
+.etapa p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: rgba(255,255,255,.92);
+    margin-bottom: 28px;
+    width:100%;
+    max-width:none;
+    text-align:justify;
 }
 
-.tema:nth-child(3n){
-
-border-color:#3A0CA3;
-
+.etapa strong {
+    color: #fff;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2px 10px;
+    border-radius: 8px;
 }
 
-.tema:hover{
+/* ==========================================
+LISTA — OCUPA TODO O ESPAÇO
+========================================== */
 
-transform:translateY(-6px);
-
-background:#faf7ff;
-
+.etapa ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+    max-width: 100%;
+    padding-right: 40px;
 }
 
-/* ============================================= */
-
-@media(max-width:1100px){
-
-.etapa{
-
-grid-template-columns:1fr;
-
-gap:30px;
-
+.etapa li {
+    padding: 18px 24px;
+    border-radius: 18px;
+    font-weight: 600;
+    transition: .35s;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    backdrop-filter: blur(4px);
+    border: none;
 }
 
-.etapa-numero{
-
-position:relative;
-
-top:auto;
-
-font-size:5rem;
-
+.etapa li:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.25);
 }
 
+/* ==========================================
+TEMAS DA FASE 2
+========================================== */
+
+.temas-titulo {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #fff;
+    max-width: 100%;
 }
 
-@media(max-width:768px){
-
-.funciona{
-
-padding:140px 0;
-
+.temas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    max-width: 100%;
+    padding-right: 40px;
 }
 
-.funciona h2{
-
-font-size:3.5rem;
-
+.tema {
+    padding: 14px 22px;
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 700;
+    font-size: .95rem;
+    transition: .35s;
+    cursor: default;
+    color: #fff;
+    backdrop-filter: blur(4px);
 }
 
-.funciona-intro{
-
-font-size:1.15rem;
-
-margin-bottom:70px;
-
+.tema:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.25);
 }
 
-.etapa{
+/* ==========================================
+LINHA DECORATIVA REMOVIDA
+========================================== */
 
-padding:55px 0;
-
+.etapa::after {
+    display: none;
 }
 
-.etapa h3{
+/* ==========================================
+RESPONSIVO
+========================================== */
 
-font-size:2.5rem;
+@media (max-width: 1200px) {
+    .funciona .container {
+        padding: 0 40px;
+    }
 
+    .etapa-numero {
+        font-size: 22rem;
+        left: -30px;
+    }
+
+    .etapa {
+        padding: 70px 50px;
+        grid-template-columns: 180px 1fr;
+    }
+
+    .etapa-conteudo {
+        padding-left: 40px;
+    }
+
+    .funciona-header-imagem {
+        width: 40%;
+        max-width: 450px;
+    }
 }
 
-.etapa ul{
+@media (max-width: 992px) {
+    .funciona .container {
+        padding: 0 30px;
+    }
 
-grid-template-columns:1fr;
+    .funciona-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
 
+    .funciona-header-imagem {
+        width: 60%;
+        max-width: 400px;
+    }
+
+    .etapa {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 50px 40px;
+        min-height: auto;
+        margin-bottom: 30px;
+        border-radius: 30px;
+    }
+
+    .etapa-numero {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        font-size: 12rem;
+        margin-bottom: -40px;
+        line-height: .8;
+        text-align: left;
+    }
+
+    .etapa-conteudo {
+        padding-left: 0;
+    }
+
+    .etapa p {
+        padding-right: 0;
+    }
+
+    .etapa ul {
+        grid-template-columns: 1fr;
+        padding-right: 0;
+    }
+
+    .temas-grid {
+        padding-right: 0;
+    }
 }
 
-.tema{
+@media (max-width: 768px) {
+    .funciona {
+        padding: 120px 0;
+    }
 
-width:100%;
+    .funciona .container {
+        padding: 0 20px;
+    }
 
-text-align:center;
+    .funciona-header-left h2 {
+        font-size: 3.2rem;
+    }
 
+    .funciona-header-imagem {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .funciona-intro {
+        font-size: 1.1rem;
+        margin-bottom: 60px;
+        padding-right: 0;
+    }
+
+    .etapa {
+        padding: 35px 20px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+    .etapa h3 {
+        font-size: 2.2rem;
+    }
+
+    .etapa p {
+        font-size: 1.05rem;
+        padding-right: 0;
+    }
+
+    .etapa-numero {
+        font-size: 8rem;
+        margin-bottom: -30px;
+    }
+
+    .temas-grid {
+        gap: 10px;
+    }
+
+    .tema {
+        font-size: .85rem;
+        padding: 12px 18px;
+    }
+
+    .etapa ul {
+        gap: 12px;
+        padding-right: 0;
+    }
+
+    .etapa li {
+        padding: 14px 18px;
+        font-size: .95rem;
+    }
 }
-
-}
-
 /* ==========================
 ENCONTRO
 ========================== */
@@ -1612,44 +1670,22 @@ width:100%;
 }
 
 @media(max-width:900px){
+    .menu{
+        display:none;
+    }
 
-.menu{
-display:none;
-}
+    .indicadores-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-.indicadores-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.etapa{
-
-grid-template-columns:1fr;
-
-padding:45px;
-
-gap:25px;
-
-}
-
-.etapa-conteudo ul{
-
-columns:1;
-
-}
-
-.sobre,
-.manifesto,
-.beneficios,
-.funciona,
-.encontro,
-.faq{
-
-padding:140px 0;
-
-}
-
+    .sobre,
+    .manifesto,
+    .beneficios,
+    .funciona,
+    .encontro,
+    .faq{
+        padding:140px 0;
+    }
 }
 
 @media(max-width:600px){
