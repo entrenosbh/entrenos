@@ -1445,3 +1445,43 @@ CTA (AJUSTE APENAS PARA O TEXTO NÃO CORTAR)
         padding: 0 10px;
     }
 }
+/* ===================================================
+   NOVOS LINKS DO RODAPÉ (INSTAGRAM E YOUTUBE)
+   =================================================== */
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-titles {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-titles a {
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: .15em;
+    color: #4CC9F0;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.social-titles a:hover {
+    color: #fff;
+    opacity: 0.85;
+}
+
+.social-titles span {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.8rem;
+}
+
+.social-handle {
+    display: inline-block;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+}
